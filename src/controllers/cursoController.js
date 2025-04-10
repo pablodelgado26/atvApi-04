@@ -41,9 +41,9 @@ class CursoController {
 
   update = async (req, res) => {
     const { id } = req.params;
-    const { concluida, descricao } = req.body;
+    const { title, instrument, level, duration, price, instructor, maxStudents } = req.body;
     try {
-      const cursoAtualizado = await cursoModel.update(Number(id), concluida, descricao);
+      const cursoAtualizado = await cursoModel.update(Number(id), title, instrument, level, duration, price, instructor, maxStudents);
       if (!cursoAtualizado) {
         return res.status(404).json({ erro: "curso não encontrada" });
       }

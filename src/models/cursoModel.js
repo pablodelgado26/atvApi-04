@@ -24,12 +24,18 @@ class CursoModel {
     })
   };
 
-  update = async (id, concluida) => {
+  update = async (id, title, instrument, level, duration, price, instructor, maxStudents) => {
     try {
       const curso = await prisma.curso.update({
         where: { id },
         data: {
-          concluida: concluida !== undefined ? concluida : true,
+          title,
+          instrument,
+          level,
+          duration,
+          price,
+          instructor,
+          maxStudents,
         }
       });
       return curso;
