@@ -1,9 +1,9 @@
 {
-  "name": "teste",
+  "name": "atividade avaliativa 04",
   "version": "1.0.0",
-  "description": "",
+  "description": "atividade avaliativa BACK-END mais Banco",
   "license": "MIT",
-  "author": "",
+  "author": "Pablo Delgado",
   "type": "module",
   "main": "server.js",
   "scripts": {
