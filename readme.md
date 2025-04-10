@@ -49,18 +49,17 @@
 ### **Tecnologias Utilizadas**
 
 1. **Node.js:**
-Plataforma para execução do JavaScript no backend.
+    Plataforma para execução do JavaScript no backend.
 
-2. **Express.js:
+2. **Express.js:**
+    Framework para criação de APIs REST.
 
-Framework para criação de APIs REST.
-Prisma:
+3. **Prisma:**
+    ORM para interação com o banco de dados.
 
-ORM para interação com o banco de dados.
-SQLite:
+4. **SQLite:**
+    Banco de dados leve e embutido.
 
-Banco de dados leve e embutido.
-Postman:
-
-Ferramenta para testar as requisições HTTP
+5. **Postman:**
+    Ferramenta para testar as requisições HTTP
 
