@@ -22,3 +22,19 @@ model Task {
 
   @@map("tasks")
 }
+
+model Curso {
+  id Int @id @default(autoincrement())
+  title String
+  instrument String
+  level String
+  duration String
+  price Float
+  instructor String?
+  maxStudents Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("cursos")
+}
