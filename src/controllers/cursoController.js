@@ -59,9 +59,9 @@ class CursoController {
     try {
       const sucesso = await cursoModel.delete(Number(id));
       if (!sucesso) {
-        return res.status(404).json({ erro: "curso não encontrada" });
+        return res.status(404).json({ erro: "curso não encontrado" });
       }
-      res.status(200).send({ message: "curso deletada com sucesso" });
+      res.status(200).send({ message: "curso deletado com sucesso" });
     } catch (error) {
       console.error(error);
       res.status(500).json({ erro: "Erro ao deletar curso" });
