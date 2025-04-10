@@ -11,13 +11,27 @@ class CursoController {
     }
   };
 
-  create = async (req, res) => {
-    const { descricao } = req.body;
+  getById = async (req, res) => {
+    const { id } = req.params;
     try {
-      if (!descricao) {
-        return res.status(400).json({ erro: "Descrição é obrigatória" });
+      const curso = await cursoModel.getById(Number(id));
+      if (!curso) {
+        return res.status(404).json({ erro: "curso não encontrada" });
       }
-      const novoCurso = await cursoModel.create(descricao);
+      res.json(curso);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ erro: "Erro ao buscar curso" });
+    }
+  }
+
+  create = async (req, res) => {
+    const { title, instrument, level, duration, price } = req.body;
+    try {
+      if (!title || !instrument || !level || !duration || !price) {
+        return res.status(400).json({ erro: "Informações são obrigatórias" });
+      }
+      const novoCurso = await cursoModel.create(title, instrument, level, duration, price);
       res.status(201).json(novoCurso);
     } catch (error) {
       console.error(error);

@@ -2,6 +2,7 @@ import express from "express";
 import cursoController from "../controllers/cursoController.js";
 const router = express.Router();
 router.get("/", cursoController.getAll);
+router.get("/:id", cursoController.getById);
 router.post("/", cursoController.create);
 router.put("/:id", cursoController.update);
 router.delete("/:id", cursoController.delete);

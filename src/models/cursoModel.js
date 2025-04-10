@@ -5,10 +5,21 @@ class CursoModel {
     return await prisma.curso.findMany();
   }
 
-  create = async (descricao) => {
+  getById = async (id) => {
+    return await prisma.curso.findUnique({
+      where: { id },
+    });
+  }
+
+
+  create = async (title, instrument, level, duration, price ) => {
     return await prisma.curso.create({
       data: {
-        descricao: descricao,
+        title,
+        instrument,
+        level,
+        duration,
+        price,
       },
     })
   };
